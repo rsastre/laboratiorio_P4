@@ -1,6 +1,3 @@
-#ifndef _DTSPINNING_HPP
-#define _DTSPINNING_HPP
-
 #include "DtClase.hpp"
 
 
@@ -12,4 +9,5 @@ public:
     int getCantBicicletas();
 };
 
-#endif
+
+    

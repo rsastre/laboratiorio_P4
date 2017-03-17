@@ -1,6 +1,3 @@
-#ifndef _DTCLASE_HPP
-#define _DTCLASE_HPP
-
 #include <string>
 #include "Turno.hpp"
 using namespace std;
@@ -22,5 +19,6 @@ public:
     void setTurno(Turno turno);
     
 };
-
-#endif
+    
+    
+    

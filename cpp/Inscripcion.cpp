@@ -1,4 +1,4 @@
-#include "fecha.hpp"
+#include "Fecha.hpp"
 #include "Inscripcion.hpp"
 Inscripcion::Inscripcion(fecha unfecha,socio unsocio){
     this->f=unfecha;

@@ -1,6 +1,3 @@
-#ifndef _FECHA_HPP
-#define _FECHA_HPP
-
 class Fecha {
 private:
     int dia;
@@ -15,4 +12,3 @@ public:
     void setanio(int anio);
 };
 
-#endif

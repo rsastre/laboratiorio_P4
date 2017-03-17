@@ -1,0 +1,16 @@
+#ifndef _GRAFO_HPP
+#define _GRAFO_HPP
+
+#include "Fecha.hpp"
+class Inscripcion 
+{
+private:
+    fecha f;
+    Socio S;
+public:
+    Inscripcion::Inscripcion(fecha,Socio);
+    fecha getfecha();
+    Socio getSocio();
+};
+
+#endif
