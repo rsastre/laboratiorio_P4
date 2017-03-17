@@ -1,4 +1,4 @@
-#include "Socio.hpp"
+#include "../include/Socio.hpp"
 #include <string>
 using namespace std;
 
