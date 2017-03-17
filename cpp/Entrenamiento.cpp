@@ -26,3 +26,4 @@ int Clase::cupo() {
 		res = 10;
 	return res;
 }
+

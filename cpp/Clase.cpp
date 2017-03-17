@@ -1,6 +1,8 @@
 #include "../include/Clase.hpp"
 #include "../include/Turno.hpp"
 #include "../include/Inscripcion.hpp"
+#include "../include/Fecha.hpp"
+
 
 #include <string>
 
@@ -28,7 +30,7 @@ void agregarInscripcion(string ciSocio, int idClase, Fecha fecha) {
 			cancelar_inscripcion = true;
 		i++;
 	}
-	if (cant_inscriptos >= this.cupos()) {
+	if (cant_inscriptos >= this.cupo()) {
 		cancelar_inscripcion = true;
 	}
 	if (!cancelar_inscripcion) {

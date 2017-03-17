@@ -6,10 +6,8 @@ private:
     string CI;
     string nombre;
 public:
-    //using namespace std;
-
     Socio(string,string);
     string getCI();
     string getnombre();
-    };
+};
     

@@ -1,11 +1,13 @@
-#include "fecha.hpp"
+#include "Fecha.hpp"
+#include "Socio.hpp"
+
 class Inscripcion 
 {
 private:
-    fecha f;
+    Fecha f;
     Socio S;
 public:
-    Inscripcion::Inscripcion(fecha,Socio);
-    fecha getfecha();
+    Inscripcion(Fecha,Socio);
+    Fecha getfecha();
     Socio getSocio();
 };
