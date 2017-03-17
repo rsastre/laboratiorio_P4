@@ -1,4 +1,4 @@
-#include "fecha.hpp"
+#include "Fecha.hpp"
 class Inscripcion 
 {
 private:
