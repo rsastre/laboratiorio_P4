@@ -1,6 +1,3 @@
-#ifndef _CLASE_HPP
-#define _CLASE_HPP
-
 #include "Turno.hpp"
 #include "Inscripcion.hpp"
 
@@ -33,5 +30,3 @@ class Clase {
 //		void setTurno();
 		void agregarInscripcion(string ciSocio, int idClase, Fecha fecha);
 };
-
-#endif

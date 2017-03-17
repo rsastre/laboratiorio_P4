@@ -2,7 +2,7 @@
 #include "../include/Turno.hpp"
 #include "../include/Inscripcion.hpp"
 
-#include <stdlib>
+#include <cstdlib>
 #include <string>
 
 using namespace std;

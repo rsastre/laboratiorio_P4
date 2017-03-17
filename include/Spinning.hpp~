@@ -1,6 +1,3 @@
-#ifndef _SPINNING_HPP
-#define _SPINNING_HPP
-
 #include "Clase.hpp"
 #include "Turno.hpp"
 #include "Inscripcion.hpp"
@@ -17,5 +14,3 @@ class Spinning: public Clase {
 		Spinning(int unid, string unnombre, Turno unturno, int cantBicicletas);
 		int virtual cupo();
 };
-
-#endif

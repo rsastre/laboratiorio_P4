@@ -1,6 +1,3 @@
-#ifndef _SOCIO_HPP
-#define _SOCIO_HPP
-
 #include <string>
 #include <iostream>
 using namespace std;
@@ -16,4 +13,3 @@ public:
     string getnombre();
     };
     
-#endif

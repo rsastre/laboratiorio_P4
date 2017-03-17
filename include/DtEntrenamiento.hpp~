@@ -1,6 +1,3 @@
-#ifndef _DTENTRENAMIENTO_HPP
-#define _DTENTRENAMIENTO_HPP
-
 #include "DtClase.hpp"
 
 
@@ -11,5 +8,3 @@ public:
     void setEnRambla(bool n);
     bool getEnRambla();
 };
-
-#endif

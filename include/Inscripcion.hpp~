@@ -1,5 +1,5 @@
-#ifndef _INSCRIPCION_HPP
-#define _INSCRIPCION_HPP
+#ifndef _GRAFO_HPP
+#define _GRAFO_HPP
 
 #include "Fecha.hpp"
 class Inscripcion 
