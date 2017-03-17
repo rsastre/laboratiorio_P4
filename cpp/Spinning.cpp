@@ -1,3 +1,4 @@
+#include "../include/Spinning.hpp"
 #include "../include/Clase.hpp"
 #include "../include/Turno.hpp"
 #include "../include/Inscripcion.hpp"
@@ -18,6 +19,6 @@ Spinning::Spinning(int unid, string unnombre, Turno unturno, int cantBicicletas)
 	this->cantBicicletas = cantBicicletas;
 }
 
-int Clase::cupo() {
-	return cantBicicletas;
+int Spinning::cupo() {
+	return this->cantBicicletas;
 }

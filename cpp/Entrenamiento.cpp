@@ -1,3 +1,4 @@
+#include "../include/Entrenamiento.hpp"
 #include "../include/Clase.hpp"
 #include "../include/Turno.hpp"
 #include "../include/Inscripcion.hpp"
@@ -7,7 +8,7 @@
 
 using namespace std;
 
-Spinning::Spinning(int unid, string unnombre, Turno unturno, bool rambla) {
+Entrenamiento::Entrenamiento(int unid, string unnombre, Turno unturno, bool rambla) {
 	this->id = unid;
 	this->nombre = unnombre;
 	this->turno = unturno;
@@ -18,7 +19,7 @@ Spinning::Spinning(int unid, string unnombre, Turno unturno, bool rambla) {
 	this->enRambla = rambla;
 }
 
-int Clase::cupo() {
+int Entrenamiento::cupo() {
 	int res;
 	if (this->enRambla)
 		res = 20;

@@ -15,7 +15,7 @@ class Spinning: public Clase {
 
 	public:
 		Spinning(int unid, string unnombre, Turno unturno, int cantBicicletas);
-		int virtual cupo();
+		virtual int cupo();
 };
 
 #endif

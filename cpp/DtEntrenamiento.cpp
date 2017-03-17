@@ -1,4 +1,4 @@
-#include "DtEntrenamiento.hpp"
+#include "../inculde/DtEntrenamiento.hpp"
 
 void DtEntrenamiento::setEnRambla(bool n){
     this->enRambla=n;

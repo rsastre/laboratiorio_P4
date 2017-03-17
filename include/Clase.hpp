@@ -28,7 +28,7 @@ class Clase {
 		int getId();
 		string getNombre();
 		Turno getTurno();
-		int virtual cupo();
+		virtual int cupo() = 0;
 		
 		//setters
 //		void setId();

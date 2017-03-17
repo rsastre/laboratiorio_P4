@@ -1,4 +1,4 @@
-#include "DtSpinning.hpp"
+#include "../include/DtSpinning.hpp"
 
 void DtSpinning::setCantBicicletas(int n){
     this->cantBicicletas=n;

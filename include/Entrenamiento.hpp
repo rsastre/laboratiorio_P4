@@ -14,8 +14,8 @@ class Entrenamiento: public Clase {
 		bool enRambla;
 
 	public:
-		Spinning(int unid, string unnombre, Turno unturno, bool enRambla);
-		int virtual cupo();
+		Entrenamiento(int unid, string unnombre, Turno unturno, bool enRambla);
+		virtual int cupo();
 };
 
 #endif
