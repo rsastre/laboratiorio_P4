@@ -14,25 +14,41 @@ int Fecha::getanio(){
 }
 
 void Fecha::setdia(int dia){
-    if ((dia<=31)&&(dia>=1)){
+    try{
+    if ((dia>31)||(dia<1)){
+        throw dia;
+    }else{
         this->dia=dia;
-    }else{
-        cout<<"invalid_argument";
-    };
+        }
+    }
+    catch(int e) {
+        cout <<"invalid_argument" << endl;
+    }
 }
+
 void Fecha::setmes(int mes){
-    if ((mes>=1)&&(mes<=12)){
-        this->mes=mes;
+    try{
+    if ((mes<1)||(mes>12)){
+        throw mes;
     }else{
-        cout<<"invalid_argument";
-    };
+        this->mes=mes;
+        }
+    }
+    catch(int e){
+        cout<<"invalid_argument" << endl;
+    }
 }
 void Fecha::setanio(int anio){
-    if (anio>=1900){
-        this->anio=anio;
+    try{
+    if (anio<1900){
+        throw anio;
     }else{
-        cout<<"invalid_argument";
-    };
+        this->anio=anio;
+        }
+    }      
+    catch (int e){
+        cout<<"invalid_argument"<< endl;
+    }
 }
 
         
