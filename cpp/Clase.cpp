@@ -20,7 +20,7 @@ Turno Clase::getTurno() {
 	return this->turno;
 }
 
-void Clase::agregarInscripcion(string ciSocio, int idClase, Fecha fecha) {
+void Clase::agregarInscripcion(string ciSocio, Socio *nuevo, Fecha fecha) {  //cambio a que pasen un puntero a socio//
 	bool cancelar_inscripcion = false;
 	int i = 0;
 	while ((i < this->cant_inscriptos) && (!cancelar_inscripcion)) {
@@ -28,11 +28,11 @@ void Clase::agregarInscripcion(string ciSocio, int idClase, Fecha fecha) {
 			cancelar_inscripcion = true;
 		i++;
 	}
-	if (this->cant_inscriptos >= this.cupo()) {
+	if (this->cant_inscriptos >= this->cupo()) {
 		cancelar_inscripcion = true;
 	}
 	if (!cancelar_inscripcion) {
-		this->inscriptos = new Inscripcion(fecha, ciSocio);
+		this->inscriptos[i] = new Inscripcion(fecha, nuevo);
 		this->cant_inscriptos++;
 	}
 }

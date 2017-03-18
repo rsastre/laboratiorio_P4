@@ -10,11 +10,11 @@ class Inscripcion
 {
 private:
     Fecha f;
-    Socio S;
+    Socio *s;
 public:
-    Inscripcion(Fecha,Socio);
+    Inscripcion(Fecha unfecha,Socio *unsocio);
     Fecha getfecha();
-    Socio getSocio();
+    Socio *getSocio();
 };
 
 #endif

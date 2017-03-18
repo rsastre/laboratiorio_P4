@@ -34,7 +34,7 @@ class Clase {
 //		void setId();
 //		void setNombre();
 //		void setTurno();
-		void agregarInscripcion(string ciSocio, int idClase, Fecha fecha);
+		void agregarInscripcion(string ciSocio, Socio *nuevo, Fecha fecha);
 };
 
 #endif

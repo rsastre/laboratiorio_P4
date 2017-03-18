@@ -1,12 +1,12 @@
-#include "Fecha.hpp"
-#include "Inscripcion.hpp"
-Inscripcion::Inscripcion(fecha unfecha,socio unsocio){
+#include "../include/Fecha.hpp"
+#include "../include/Inscripcion.hpp"
+Inscripcion::Inscripcion(Fecha unfecha,Socio *unsocio){
     this->f=unfecha;
-    this->s=unsocio
+    this->s=unsocio;
 }
-fecha getfecha(){
+Fecha Inscripcion:: getfecha(){
     return this->f;
 }
-Socio getSocio(){
-    return this->S;
+Socio * Inscripcion:: getSocio(){
+    return this->s;
 }
