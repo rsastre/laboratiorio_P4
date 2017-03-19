@@ -19,28 +19,56 @@ Socio *sistemaSocio[MAX_SOCIOS];
 Clase *sistemaClase[MAX_CLASES];
 
 void agregarSocio(string ci, string nombre){
-	int i=0;
-	bool sigobuscando=true;
-	while ((i<MAX_SOCIOS) && (sigobuscando)){
-		if (sistemaSocio[i]!=NULL){
+	try{
+		int i=0;
+		while((i<MAX_SOCIOS)&&(sistemaSocio[i]!=NULL)){
 			if (sistemaSocio[i]->getCI()==ci){
-				sigobuscando==false;
+				throw (true);
 			}
+		i++;
 		}
-	i++;
+		if (i<MAX_SOCIOS){
+			sistemaSocio[i]= new Socio(ci,nombre);
+		}
 	}
-	if (sigobuscando==true){
-		sistemaSocio[i]=new Socio(ci,nombre);
-	}else{
-		tirar exepcion std::invalid argument
+	catch (bool e){
+		cout<<"invalid_argument"<< endl;
 	}
-}
+};
 
 void agregarClase(DtClase& clase){
-	Spinning spinning
+	try{
+		int i=0;
+		while((i<MAX_CLASES)&&(sistemaClase[i]!=NULL)){
+			if (sistemaClase[i]->getId()==clase.getId()){
+				throw(true);
+			}
+		i++;
+		}
+		if (i<MAX_CLASES){
+			if((dynamic_cast<DtEntrenamiento&>(clase))!=NULL){
+				int id=clase.getId();
+				string nombre=clase.getNombre();
+				Turno turno=clase.getTurno();
+				DtEntrenamiento *entrena;
+				entrena=dynamic_cast<DtEntrenamiento*>(clase);
+				bool rambla=entrena->getEnRampla();
+				sistemaClase[i]=new Entrenamiento(id,nombre,turno,rambla);
+			}else{
+				int id=clase.getId();
+				string nombre=clase.getNombre();
+				Turno turno=clase.getTurno();
+				bool cantBicicletas=clase.getCantBicicletas();
+				sistemaClase[i]=new Spinning(id,nombre,turno,cantBicicletas);
+			}
+		}
+	}
+	catch (bool e){
+		cout<< "invalid_argument"<< endl;
+	}
+};
 
 
-}
 	
 
 		
@@ -50,22 +78,8 @@ int main()
 		sistemaSocio[i]=NULL;
 	}
 	for (int i = 0; i < MAX_CLASES; i++){
-		sistemaClase[i]=NULL
+		sistemaClase[i]=NULL;
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	return 0;
