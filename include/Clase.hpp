@@ -31,11 +31,7 @@ class Clase {
 		virtual int cupo() = 0;
 		
 		//setters
-//		void setId();
-//		void setNombre();
-//		void setTurno();
-		void agregarInscripcion(string ciSocio, Socio *nuevo, Fecha fecha);
+		bool agregarInsc(string ciSocio, Socio *nuevo, Fecha fecha);
 };
 
 #endif
-
