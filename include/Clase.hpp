@@ -5,14 +5,12 @@
 #include "Inscripcion.hpp"
 #include "Fecha.hpp"
 
-
-
 #include <string>
 
 using namespace std;
 
 class Clase {
-	private:
+	protected:
 		int id;
 		string nombre;
 		Turno turno;

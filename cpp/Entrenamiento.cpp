@@ -3,20 +3,13 @@
 #include "../include/Turno.hpp"
 #include "../include/Inscripcion.hpp"
 
-#include <stdlib>
+#include <cstdlib>
 #include <string>
 
 using namespace std;
 
-Entrenamiento::Entrenamiento(int unid, string unnombre, Turno unturno, bool rambla) {
-	this->id = unid;
-	this->nombre = unnombre;
-	this->turno = unturno;
-	this->inscriptos = new ptr_inscripcion[50];
-	for (int i = 0; i < 50; i++)
-		this->inscriptos[i] = NULL;
-	this->cant_inscriptos = 0;
-	this->enRambla = rambla;
+Entrenamiento::Entrenamiento(int unid, string unnombre, Turno unturno, bool rambla) : Clase(unid, unnombre, unturno) {
+        this->enRambla = rambla;
 }
 
 int Entrenamiento::cupo() {

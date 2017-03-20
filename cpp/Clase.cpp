@@ -8,6 +8,16 @@
 
 using namespace std;
 
+Clase::Clase(int unid, string unnombre, Turno unturno) {
+	this->id = unid;
+	this->nombre = unnombre;
+	this->turno = unturno;
+	this->inscriptos = new ptr_inscripcion[50];
+	for (int i = 0; i < 50; i++)
+		this->inscriptos[i] = NULL;
+	this->cant_inscriptos = 0;
+}
+
 int Clase::getId() {
 	return this->id;
 }
