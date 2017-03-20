@@ -3,7 +3,7 @@
 #include "../include/Inscripcion.hpp"
 #include "../include/Fecha.hpp"
 
-
+#include <cstdlib>
 #include <string>
 
 using namespace std;
@@ -32,18 +32,40 @@ Turno Clase::getTurno() {
 
 bool Clase::agregarInsc(string ciSocio, Socio *nuevo, Fecha fecha) {  //cambio a que pasen un puntero a socio//
 	bool cancelar_inscripcion = false;
-	int i = 0;
+	int pos;
+        int i = 0;
 	if (this->cant_inscriptos >= this->cupo()) {
 		cancelar_inscripcion = true;
 	}
-        while ((i < this->cant_inscriptos) && (!cancelar_inscripcion)) {
-		if (this->inscriptos[i]->getSocio()->getCI() == ciSocio)
+        while ((i < 50) && (!cancelar_inscripcion)) {
+                if (this->inscriptos[i] == NULL) {
+                        pos = i;
+                } else if (this->inscriptos[i]->getSocio()->getCI() == ciSocio) {
 			cancelar_inscripcion = true;
-		i++;
+                }
+                i++;
+                
 	}
 	if (!cancelar_inscripcion) {
-		this->inscriptos[i] = new Inscripcion(fecha, nuevo);
+		this->inscriptos[pos] = new Inscripcion(fecha, nuevo);
 		this->cant_inscriptos++;
 	}
         return !cancelar_inscripcion;
+}
+
+bool Clase::borrarInsc(string ciSocio) {
+        int i = 0;
+	while ((i<50) && (this->inscriptos[i]->getSocio()->getCI()!=ciSocio)) {
+		i++;
+	}
+        if (i>=50) {
+                return false;
+        }
+        else{
+                this->inscriptos[i]->~Inscripcion();
+                this->inscriptos[i] = NULL;
+                this->cant_inscriptos--;
+                return true;
+        }
+                
 }

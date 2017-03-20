@@ -30,6 +30,8 @@ class Clase {
 		
 		//setters
 		bool agregarInsc(string ciSocio, Socio *nuevo, Fecha fecha);
+                
+                bool borrarInsc(string ciSocio);
 };
 
 #endif

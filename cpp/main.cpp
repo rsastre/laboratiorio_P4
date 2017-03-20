@@ -85,11 +85,24 @@ void agregarInscripcion(string ciSocio, int idClase, Fecha fecha){
 		}
 	}
 	catch(bool e){
-		cout<< "invalid_argument"<< endl
+		cout<< "invalid_argument"<< endl;
 	}
 }
 
-
+void borrarInscripcion(string ciSocio, int idClase) {
+        int i=0;
+	while ((i<MAX_CLASES) && (sistemaClase[i]->getId()!=idClase)) {
+		i++;
+	}
+        try {
+                if (!(sistemaClase[i]->borrarInsc(ciSocio))) {
+                        throw(true);
+                }
+        }
+        catch (bool e) {
+                cout << "invalid_argument" << endl;
+        }
+}
 
 	
 
