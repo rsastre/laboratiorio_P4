@@ -79,10 +79,14 @@ void agregarInscripcion(string ciSocio, int idClase, Fecha fecha){
 	while((i<MAX_SOCIOS)&&(sistemaSocio[i]->getCI()!=ciSocio)){
 		j++;
 	}
-	
-
-
-
+	try{
+		if (!(sistemaClase[i]->agregarInsc(ciSocio,sistemaSocio[j],fecha))){
+			throw(true);
+		}
+	}
+	catch(bool e){
+		cout<< "invalid_argument"<< endl
+	}
 }
 
 
