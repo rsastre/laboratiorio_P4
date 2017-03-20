@@ -9,7 +9,10 @@
 #include "../include/Socio.hpp"
 #include "../include/Spinning.hpp"
 #include "../include/Turno.hpp"
+
 #include <string>
+#include <cstdlib>
+
 using namespace std;
 
 const int MAX_SOCIOS= 100;
@@ -46,19 +49,21 @@ void agregarClase(DtClase& clase){
 		i++;
 		}
 		if (i<MAX_CLASES){
-			if((dynamic_cast<DtEntrenamiento&>(clase))!=NULL){
-				int id=clase.getId();
-				string nombre=clase.getNombre();
-				Turno turno=clase.getTurno();
-				DtEntrenamiento *entrena;
-				entrena=dynamic_cast<DtEntrenamiento*>(clase);
-				bool rambla=entrena->getEnRampla();
+                        DtClase * ptr_clase;
+                        ptr_clase = &clase;
+                        DtEntrenamiento *entrena = static_cast<DtEntrenamiento*>(ptr_clase);
+                        if (entrena != NULL) {
+				int id=entrena->getId();
+				string nombre=entrena->getNombre();
+				Turno turno=entrena->getTurno();
+                                bool rambla=entrena->getEnRambla();
 				sistemaClase[i]=new Entrenamiento(id,nombre,turno,rambla);
 			}else{
-				int id=clase.getId();
-				string nombre=clase.getNombre();
-				Turno turno=clase.getTurno();
-				bool cantBicicletas=clase.getCantBicicletas();
+                                DtSpinning *spin = static_cast<DtSpinning*>(ptr_clase);
+				int id=spin->getId();
+				string nombre=spin->getNombre();
+				Turno turno=spin->getTurno();
+				int cantBicicletas=spin->getCantBicicletas();
 				sistemaClase[i]=new Spinning(id,nombre,turno,cantBicicletas);
 			}
 		}
