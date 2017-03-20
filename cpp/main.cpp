@@ -104,7 +104,13 @@ void borrarInscripcion(string ciSocio, int idClase) {
         }
 }
 
-	
+DtSocio** obtenerInfoSociosPorClase(int idClase, int& cantSocios) {
+        int i=0;
+	while ((i<MAX_CLASES) && (sistemaClase[i]->getId()!=idClase)) {
+		i++;
+	}
+        return sistemaClase[i]->obtenerInfoSocios(cantSocios);
+}	
 
 		
 int main()

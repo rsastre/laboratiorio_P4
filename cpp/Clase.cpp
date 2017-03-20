@@ -2,6 +2,7 @@
 #include "../include/Turno.hpp"
 #include "../include/Inscripcion.hpp"
 #include "../include/Fecha.hpp"
+#include "../include/DtSocio.hpp"
 
 #include <cstdlib>
 #include <string>
@@ -66,6 +67,26 @@ bool Clase::borrarInsc(string ciSocio) {
                 this->inscriptos[i] = NULL;
                 this->cant_inscriptos--;
                 return true;
+        }           
+}
+
+DtSocio** Clase::obtenerInfoSocios(int& cantSocios) {
+        DtSocio** res = new DtSocio*[cantSocios];
+        for (int j = 0; j < cantSocios; j++) {
+                res[j] = NULL;
         }
-                
+        int cont = 0;
+        int i = 0;
+        while ((cont <= cantSocios) && (i < 50)) {
+                if (this->inscriptos[i] != NULL) {
+                        int ci = atoi(this->inscriptos[i]->getSocio()->getCI().c_str());
+                        string nombre = this->inscriptos[i]->getSocio()->getnombre();
+                        res[cont] = new DtSocio();
+                        res[cont]->setCI(ci);
+                        res[cont]->setNombre(nombre);
+                        cont++;
+                }
+                i++;
+        }
+        return res;
 }

@@ -4,6 +4,7 @@
 #include "Turno.hpp"
 #include "Inscripcion.hpp"
 #include "Fecha.hpp"
+#include "../include/DtSocio.hpp"
 
 #include <string>
 
@@ -27,6 +28,7 @@ class Clase {
 		string getNombre();
 		Turno getTurno();
 		virtual int cupo() = 0;
+                DtSocio** obtenerInfoSocios(int& cantSocios);
 		
 		//setters
 		bool agregarInsc(string ciSocio, Socio *nuevo, Fecha fecha);
