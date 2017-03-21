@@ -2,12 +2,14 @@
 #define _DTSPINNING_HPP
 
 #include "DtClase.hpp"
+#include "Spinning.hpp"
 
 
 class DtSpinning: public DtClase {
-private:
+protected:
     int cantBicicletas;
 public:
+	Spinning CrearClase(DtClase clase);
     void setCantBicicletas(int n);
     int getCantBicicletas();
 };

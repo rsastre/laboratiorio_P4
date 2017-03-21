@@ -4,6 +4,8 @@
 #include "Clase.hpp"
 #include "Turno.hpp"
 #include "Inscripcion.hpp"
+#include "DtClase.hpp"
+
 
 #include <string>
 
