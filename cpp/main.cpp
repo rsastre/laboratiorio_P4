@@ -9,6 +9,8 @@
 #include "../include/Socio.hpp"
 #include "../include/Spinning.hpp"
 #include "../include/Turno.hpp"
+
+#include <cstdlib>
 #include <string>
 #include <iostream>
 using namespace std;
@@ -45,23 +47,18 @@ void agregarClase(DtClase& clase){
 			if (sistemaClase[i]->getId()==clase.getId()){
 				throw(true);
 			}
-		i++;
+                        i++;
 		}
 		if (i<MAX_CLASES){
-			try{
-				DtEntrenamiento entrena= dynamic_cast<DtEntrenamiento&> (clase);
-				int id=clase.getId();
-				string nombre=clase.getNombre();
-				Turno turno=clase.getTurno();
-				bool rambla=entrena.getEnRampla();
-				sistemaClase[i]=new Entrenamiento(id,nombre,turno,rambla);
-			}
-			catch (const std::bad_cast& e) {
-				int id=clase.getId();
-				string nombre=clase.getNombre();
-				Turno turno=clase.getTurno();
-				bool cantBicicletas=clase.getCantBicicletas();
-				sistemaClase[i]=new Spinning(id,nombre,turno,cantBicicletas);
+                        Clase * clase_base;
+                        clase_base = clase.crearClase();
+                        Entrenamiento *entrena = dynamic_cast<Entrenamiento*> (clase_base);
+			if (entrena != NULL) {
+                                sistemaClase[i] = entrena;
+			} 
+                        else {
+                                Spinning *spin = dynamic_cast<Spinning*> (clase_base);
+				sistemaClase[i] = spin;
 			}
 		}
 	}

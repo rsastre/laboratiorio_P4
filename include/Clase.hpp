@@ -4,7 +4,7 @@
 #include "Turno.hpp"
 #include "Inscripcion.hpp"
 #include "Fecha.hpp"
-#include "../include/DtSocio.hpp"
+#include "DtSocio.hpp"
 
 #include <string>
 

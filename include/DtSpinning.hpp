@@ -2,6 +2,7 @@
 #define _DTSPINNING_HPP
 
 #include "DtClase.hpp"
+#include "Spinning.hpp"
 
 
 class DtSpinning: public DtClase {
@@ -10,6 +11,7 @@ private:
 public:
     void setCantBicicletas(int n);
     int getCantBicicletas();
+    virtual Spinning * crearClase();
 };
 
 #endif
