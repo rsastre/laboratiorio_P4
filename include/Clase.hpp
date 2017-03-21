@@ -28,7 +28,7 @@ class Clase {
 		string getNombre();
 		Turno getTurno();
 		virtual int cupo() = 0;
-                DtSocio** obtenerInfoSocios(int& cantSocios);
+                DtSocio** obtenerInfoSocios(int cantSocios);
 		
 		//setters
 		bool agregarInsc(string ciSocio, Socio *nuevo, Fecha fecha);

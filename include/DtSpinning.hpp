@@ -6,7 +6,7 @@
 
 
 class DtSpinning: public DtClase {
-private:
+protected:
     int cantBicicletas;
 public:
     void setCantBicicletas(int n);
