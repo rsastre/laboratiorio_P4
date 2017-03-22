@@ -3,6 +3,8 @@
 #include "../include/Inscripcion.hpp"
 #include "../include/Fecha.hpp"
 #include "../include/DtSocio.hpp"
+#include "../include/Socio.hpp"
+
 
 #include <cstdlib>
 #include <string>
@@ -70,7 +72,7 @@ bool Clase::borrarInsc(string ciSocio) {
         }           
 }
 
-DtSocio** Clase::obtenerInfoSocios(int& cantSocios) {
+DtSocio** Clase::obtenerInfoSocios(int cantSocios) {
         DtSocio** res = new DtSocio*[cantSocios];
         for (int j = 0; j < cantSocios; j++) {
                 res[j] = NULL;

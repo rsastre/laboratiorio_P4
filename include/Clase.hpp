@@ -1,10 +1,11 @@
 #ifndef _CLASE_HPP
 #define _CLASE_HPP
 
-#include "Turno.hpp"
-#include "Inscripcion.hpp"
-#include "Fecha.hpp"
+#include "../include/Turno.hpp"
+#include "../include/Inscripcion.hpp"
+#include "../include/Fecha.hpp"
 #include "../include/DtSocio.hpp"
+#include "../include/Socio.hpp"
 
 #include <string>
 
@@ -28,7 +29,7 @@ class Clase {
 		string getNombre();
 		Turno getTurno();
 		virtual int cupo() = 0;
-                DtSocio** obtenerInfoSocios(int& cantSocios);
+                DtSocio** obtenerInfoSocios(int cantSocios);
 		
 		//setters
 		bool agregarInsc(string ciSocio, Socio *nuevo, Fecha fecha);
