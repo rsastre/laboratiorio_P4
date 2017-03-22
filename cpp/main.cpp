@@ -9,9 +9,15 @@
 #include "../include/Socio.hpp"
 #include "../include/Spinning.hpp"
 #include "../include/Turno.hpp"
+
+#include <cstdlib>
 #include <string>
 #include <iostream>
 #include <exception>
+<<<<<<< HEAD
+=======
+
+>>>>>>> efca221aded49ecde1b90f0d9b3c0bd8a268cb1f
 using namespace std;
 
 const int MAX_SOCIOS= 100;
@@ -46,11 +52,24 @@ void agregarClase(DtClase& clase){
 			if (sistemaClase[i]->getId()==clase.getId()){
 				throw std::invalid_argument("Clase inválida");
 			}
-		i++;
+                        i++;
 		}
 		if (i<MAX_CLASES){
+<<<<<<< HEAD
 			sistemaClase[i]*=clase.CrearClase();
 
+=======
+                        Clase * clase_base;
+                        clase_base = clase.crearClase();
+                        Entrenamiento *entrena = dynamic_cast<Entrenamiento*> (clase_base);
+			if (entrena != NULL) {
+                                sistemaClase[i] = entrena;
+			} 
+                        else {
+                                Spinning *spin = dynamic_cast<Spinning*> (clase_base);
+				sistemaClase[i] = spin;
+			}
+>>>>>>> efca221aded49ecde1b90f0d9b3c0bd8a268cb1f
 		}
 	}
 	catch (const std::invalid_argument& ia){

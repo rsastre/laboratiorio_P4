@@ -1,11 +1,18 @@
 #ifndef _CLASE_HPP
 #define _CLASE_HPP
 
+<<<<<<< HEAD
 #include "../include/Turno.hpp"
 #include "../include/Inscripcion.hpp"
 #include "../include/Fecha.hpp"
 #include "../include/DtSocio.hpp"
 #include "../include/Socio.hpp"
+=======
+#include "Turno.hpp"
+#include "Inscripcion.hpp"
+#include "Fecha.hpp"
+#include "DtSocio.hpp"
+>>>>>>> efca221aded49ecde1b90f0d9b3c0bd8a268cb1f
 
 #include <string>
 

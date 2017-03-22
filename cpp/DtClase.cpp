@@ -1,5 +1,10 @@
 #include "../include/DtClase.hpp"
+#include "../include/Clase.hpp"
+#include "../include/Turno.hpp"
+#include "../include/Entrenamiento.hpp"
+
 #include <string>
+
 using namespace std;
 
 int DtClase::getId(){
@@ -24,8 +29,8 @@ void DtClase::setTurno(Turno turno){
     this->turno=turno;
 }
 
-
-
-
-    
+Clase * DtClase::crearClase() {
+        Entrenamiento *res = new Entrenamiento(this->id, this->nombre, this->turno, false);
+        return res;
+}
 

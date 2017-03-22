@@ -12,6 +12,7 @@ public:
 	Spinning CrearClase(DtClase clase);
     void setCantBicicletas(int n);
     int getCantBicicletas();
+    virtual Spinning * crearClase();
 };
 
 #endif
